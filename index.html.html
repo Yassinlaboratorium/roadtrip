@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rihab's roadtrip · van Kroatië naar de Riviera</title>
+<!-- FOTO'S: wil je een echte foto op een stop? Zet op die .scene een
+     style="background-image:url('foto.jpg');background-size:cover" en haal de <svg> weg. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Caveat:wght@600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FFF6F1; --sand:#FFF6F1; --sand2:#FFEDE7;
+    --deep:#9B3B63; --sea:#C15B86; --turq:#F2879F;
+    --sun:#FF9E8A; --coral:#FF8A9B; --gold:#F6C87A; --pink:#F8A5C0;
+    --ink:#6B4A54; --muted:#AC8B93; --card:#FFFFFF; --line:#F6DAD5;
+    --hard:0 12px 26px -14px rgba(196,75,120,.32);
+    --hard2:0 18px 38px -18px rgba(196,75,120,.26);
+    --maxw:920px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{font-family:"Quicksand",system-ui,-apple-system,sans-serif;color:var(--ink);font-weight:500;line-height:1.7;
+    background:radial-gradient(circle at 12% 8%,#FFE0E6 0%,transparent 42%),radial-gradient(circle at 88% 4%,#FFE8D8 0%,transparent 40%),var(--paper);
+    -webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;line-height:1.08;font-weight:600;color:var(--sea)}
+  .hand{font-family:"Caveat",cursive;font-weight:700;line-height:1}
+  a{color:var(--coral)}
+
+  #bar{position:fixed;top:0;left:0;height:4px;width:0;z-index:60;background:linear-gradient(90deg,var(--pink),var(--gold),var(--coral))}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,246,241,.9);backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:54px;gap:12px}
+  nav .me{font-family:"Caveat",cursive;font-weight:700;font-size:1.55rem;color:var(--coral);white-space:nowrap;transform:rotate(-3deg)}
+  nav .links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+  nav .links::-webkit-scrollbar{display:none}
+  nav a{color:var(--sea);text-decoration:none;font-size:.85rem;font-weight:700;padding:6px 12px;border-radius:20px;white-space:nowrap;transition:.15s}
+  nav a:hover{background:var(--pink);color:#fff}
+
+  .hero{position:relative;min-height:94vh;display:flex;flex-direction:column;justify-content:center;color:#fff;overflow:hidden;
+    background:linear-gradient(180deg,#FFC9C0 0%,#FF9FB0 38%,#F47CA0 70%,#DC5E8E 100%)}
+  .hero .sun{position:absolute;top:9%;right:-24px;width:200px;height:200px;border-radius:50%;
+    background:radial-gradient(circle at 42% 40%,#FFF0D6,#FCD9A0 58%,#FFB38A);box-shadow:0 0 0 16px rgba(255,240,214,.22),0 0 90px 26px rgba(255,209,160,.4)}
+  .hero .seaband{display:none}
+  .hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:26px;background:radial-gradient(circle at 18px 26px,var(--paper) 18px,transparent 19px);background-size:36px 26px;background-repeat:repeat-x}
+  .hero .wrap{position:relative;z-index:2}
+  .hero .kick{font-family:"Caveat",cursive;font-size:2rem;color:#fff;background:rgba(255,255,255,.22);border:1.5px solid rgba(255,255,255,.5);padding:3px 18px;border-radius:22px;transform:rotate(-2deg);display:inline-block;margin-bottom:16px}
+  .hero h1{font-size:clamp(2.8rem,10vw,5.2rem);font-weight:700;letter-spacing:-.5px;margin:.05em 0 .3em;color:#fff;text-shadow:0 3px 16px rgba(150,40,70,.28)}
+  .hero h1 em{font-style:normal;color:#FFEAC9}
+  .hero .sub{font-size:clamp(1.05rem,3.4vw,1.35rem);max-width:32ch;color:#FFF0F2;font-weight:600}
+  .hero .scroll{position:absolute;bottom:56px;left:50%;transform:translateX(-50%);color:#fff;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;text-align:center;font-weight:700}
+  .hero .scroll span{display:block;font-size:1.5rem;animation:bob 1.8s infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+
+  section{padding:60px 0;position:relative}
+  .eyebrow{font-family:"Caveat",cursive;font-size:1.75rem;color:var(--coral);margin-bottom:0;transform:rotate(-2deg);display:inline-block}
+  .eyebrow::before{content:"\2661 "}
+  h2.big{font-size:clamp(2rem,6vw,3.1rem);letter-spacing:-.3px;margin-bottom:.5em;color:var(--sea)}
+
+  .intro .lead{font-size:clamp(1.15rem,3.6vw,1.5rem);line-height:1.55;max-width:40ch;font-weight:600;color:var(--ink)}
+  .intro .lead b{color:var(--coral)}
+  .note{font-family:"Caveat",cursive;font-size:1.7rem;color:var(--sea);background:#fff;border:2px dashed var(--pink);border-radius:16px;padding:8px 16px;display:inline-block;transform:rotate(-1.5deg);margin-top:22px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chips span{background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:7px 16px;font-size:.9rem;font-weight:700;color:var(--sea);box-shadow:var(--hard)}
+  .chips span::before{content:"\2661 ";color:var(--pink)}
+
+  .cd{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+  .cd .u{border-radius:20px;padding:16px 6px;min-width:76px;flex:1;text-align:center;box-shadow:var(--hard2);color:#fff}
+  .cd .u:nth-child(1){background:linear-gradient(160deg,#FFC48C,#F6A96A)}
+  .cd .u:nth-child(2){background:linear-gradient(160deg,#FF9FB0,#F16E97)}
+  .cd .u:nth-child(3){background:linear-gradient(160deg,#F8A5C0,#E87FB0)}
+  .cd .u:nth-child(4){background:linear-gradient(160deg,#F58BA5,#D95E8B)}
+  .cd .v{display:block;font-family:"Fraunces",serif;font-weight:700;font-size:2.2rem;line-height:1}
+  .cd .k{font-size:.68rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;opacity:.95}
+  .cdnote{margin-top:16px;color:var(--sea);font-family:"Caveat",cursive;font-size:1.75rem}
+
+  .tl{position:relative;margin-top:14px;padding-left:38px}
+  .tl:before{content:"";position:absolute;left:12px;top:12px;bottom:12px;width:3px;background:repeating-linear-gradient(var(--pink) 0 7px,transparent 7px 14px)}
+  .stopli{position:relative;padding:10px 0 22px}
+  .stopli .dot{position:absolute;left:-38px;top:12px;width:30px;height:30px;border-radius:50%;background:#fff;border:2.5px solid var(--pink);display:grid;place-items:center;font-size:.85rem;box-shadow:var(--hard)}
+  .stopli:nth-child(2n) .dot{border-color:var(--coral)}
+  .stopli:nth-child(3n) .dot{border-color:var(--gold)}
+  .stopli h4{font-size:1.2rem;color:var(--sea)}
+  .stopli .when{font-weight:700;color:var(--coral);font-size:.9rem}
+  .stopli p{color:var(--muted);font-size:.98rem}
+
+  .tickhint{background:linear-gradient(120deg,#FFE7EC,#FFF0E4);border:1.5px solid var(--pink);border-radius:18px;padding:13px 16px;font-size:.98rem;color:var(--sea);margin-bottom:22px;box-shadow:var(--hard);font-weight:600}
+  .tickhint b{color:var(--deep)}
+
+  .stop{border-radius:24px;overflow:hidden;background:#fff;margin:32px 0;box-shadow:var(--hard2);border:1.5px solid var(--line);position:relative}
+  .stop::before{content:"\2661";position:absolute;top:12px;right:16px;z-index:5;font-size:1.5rem;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.2)}
+  .scene{position:relative;height:180px;overflow:hidden;color:#fff;display:flex;align-items:flex-end;padding:18px 20px}
+  .scene svg{position:absolute;inset:0;width:100%;height:100%;transform:scale(1.12);will-change:transform}
+  .scene .cap{position:relative;z-index:2;width:100%;display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+  .scene .cap .place h3{font-size:1.8rem;color:#fff;text-shadow:0 2px 10px rgba(120,30,60,.4)}
+  .scene .cap .place .country{font-size:.78rem;letter-spacing:2px;text-transform:uppercase;opacity:.95;font-weight:700}
+  .scene .badge{background:#fff;color:var(--sea);font-weight:700;font-size:.8rem;padding:6px 14px;border-radius:20px;white-space:nowrap;box-shadow:var(--hard)}
+  .t-hr{background:linear-gradient(160deg,#F58BA5,#E85D86)}
+  .t-ba{background:linear-gradient(160deg,#EE8FB0,#D96A98)}
+  .t-me{background:linear-gradient(160deg,#F79E86,#EF6E86)}
+  .t-al1{background:linear-gradient(160deg,#F58BA0,#E76A94)}
+  .t-al2{background:linear-gradient(160deg,#FBAF88,#F0789A 60%,#F6C87A)}
+  .stop .body{padding:22px}
+  .sleep{display:flex;gap:10px;align-items:flex-start;background:var(--sand2);border-radius:16px;padding:12px 14px;margin-bottom:16px}
+  .sleep .ic{font-size:1.2rem;line-height:1.4}
+  .sleep b{color:var(--coral)}
+  .spots{display:grid;gap:14px}
+  @media(min-width:640px){.spots{grid-template-columns:1fr 1fr}}
+
+  .spot{border:1.5px solid var(--line);border-radius:18px;padding:14px 16px;padding-right:50px;background:#fff;position:relative;cursor:pointer;box-shadow:var(--hard);transition:transform .18s,box-shadow .18s,background .2s}
+  .spot:hover{transform:translateY(-3px);box-shadow:0 16px 30px -16px rgba(196,75,120,.4)}
+  .spot h5{font-family:"Fraunces",serif;font-size:1.12rem;color:var(--ink);margin-bottom:3px;display:flex;gap:7px;align-items:center}
+  .spot p{font-size:.96rem;color:var(--muted)}
+  .spot.gem{background:linear-gradient(160deg,#FFF3F5,#FFF7EC);border-color:var(--pink)}
+  .spot.gem h5::after{content:"verborgen plekje";font-family:"Caveat";font-weight:700;color:var(--coral);font-size:1.05rem;margin-left:auto}
+  .spot .chk{position:absolute;top:12px;right:12px;width:30px;height:30px;border-radius:50%;border:2px dashed var(--pink);background:#fff;display:grid;place-items:center;color:transparent;font-size:.95rem;transition:transform .18s,background .18s}
+  .spot:hover .chk{transform:scale(1.12)}
+  .spot.done{border-color:var(--pink);background:#FFF2F6}
+  .spot.done .chk{background:var(--coral);border-style:solid;border-color:var(--coral);color:#fff;animation:pop .3s}
+  .spot.done h5{text-decoration:line-through;text-decoration-color:var(--pink);text-decoration-thickness:2px;color:var(--muted)}
+  .spot.done h5::after{text-decoration:none}
+  @keyframes pop{0%{transform:scale(.5)}55%{transform:scale(1.3)}100%{transform:scale(1)}}
+
+  .halaltag{display:inline-flex;gap:6px;align-items:flex-start;margin-top:14px;background:#FDECEF;border:1.5px solid var(--pink);color:var(--deep);border-radius:16px;padding:10px 14px;font-size:.93rem;font-weight:600}
+
+  #prog{position:fixed;left:50%;transform:translateX(-50%) rotate(-1deg);bottom:16px;z-index:55;background:linear-gradient(120deg,var(--coral),var(--pink));color:#fff;border:2px solid #fff;border-radius:30px;padding:7px 8px 7px 16px;display:flex;align-items:center;gap:10px;box-shadow:var(--hard2);font-size:.85rem;font-weight:700;max-width:calc(100vw - 24px)}
+  #prog .track{width:70px;height:9px;border-radius:6px;background:rgba(255,255,255,.42);overflow:hidden}
+  #prog .fill{height:100%;width:0;background:var(--gold);transition:width .45s}
+  #prog .n{background:#fff;color:var(--coral);border-radius:20px;padding:3px 11px;font-weight:800}
+  .cf{position:fixed;width:10px;height:10px;border-radius:50%;z-index:70;pointer-events:none;animation:cf .8s ease-out forwards}
+  @keyframes cf{to{transform:translate(var(--dx),var(--dy)) rotate(200deg);opacity:0}}
+  @media (prefers-reduced-motion:reduce){.cf{display:none}}
+
+  .ot-card{background:linear-gradient(160deg,#FF9FB0,#EC6E97);color:#fff;border-radius:26px;padding:34px 26px 28px;box-shadow:var(--hard2);position:relative}
+  .ot-card::before{content:"\2661";position:absolute;top:-14px;right:24px;font-size:2.2rem;color:#fff;text-shadow:0 3px 8px rgba(150,40,70,.3)}
+  .ot-card .eyebrow{color:#FFEAC9}
+  .ot-card h2{color:#fff}
+  .ot-card p{color:#FFF0F2;margin-top:6px;max-width:54ch;font-weight:600}
+
+  .pic{display:inline-block;margin-top:4px;font-family:"Caveat",cursive;font-size:1.35rem;color:var(--coral)}
+
+  .packlist{list-style:none;margin-top:8px}
+  .packlist li{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:12px 14px 12px 48px;margin-bottom:9px;position:relative;cursor:pointer;font-size:1rem;font-weight:600;box-shadow:var(--hard);transition:.15s}
+  .packlist li:hover{transform:translateX(2px)}
+  .packlist li:before{content:"";position:absolute;left:14px;top:50%;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;border:2px solid var(--pink);background:#fff;transition:.15s}
+  .packlist li.on:before{background:var(--coral);border-color:var(--coral)}
+  .packlist li.on:after{content:"\2665";position:absolute;left:18px;top:50%;transform:translateY(-50%);color:#fff;font-size:.78rem}
+  .packlist li.on{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--pink)}
+
+  .grid{display:grid;gap:16px}
+  @media(min-width:640px){.grid.two{grid-template-columns:1fr 1fr}}
+  .icard{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:16px 18px;box-shadow:var(--hard)}
+  .icard h4{font-family:"Fraunces",serif;font-size:1.12rem;color:var(--sea);margin-bottom:4px;display:flex;gap:8px;align-items:center}
+  .icard p{font-size:.96rem;color:var(--muted)}
+  .icard .em{color:var(--ink);font-weight:700}
+  .ml{color:#D96A98;text-decoration:none;border-bottom:2px solid rgba(248,165,192,.6);font-weight:700}
+  .ml:hover{color:#C15B86}
+  .go{display:inline-block;margin-top:6px;font-size:.9rem;font-weight:700;color:#D96A98;text-decoration:none}
+  .go:hover{color:#C15B86}
+
+  .net{background:linear-gradient(180deg,#C15B86,#8E3A5D);color:#fff}
+  .net h2.big{color:#fff}
+  .net .eyebrow{color:#FFE0C2}
+  .net .alert{background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.4);border-radius:16px;padding:14px 16px;font-size:1rem;margin-bottom:18px;font-weight:600}
+  .net .alert b{color:#FFE0C2}
+  .net .icard{background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.22);box-shadow:none}
+  .net .icard h4{color:#fff}
+  .net .icard p{color:#FBE4EC}
+  .net .go,.net .ml{color:#FFE0C2;border-color:rgba(255,224,194,.4)}
+  .net .small{color:#F3CFDD;font-size:.9rem;margin-top:16px}
+
+  .dcard{background:#fff;border:1.5px solid var(--line);border-left:5px solid var(--pink);border-radius:16px;padding:14px 16px;box-shadow:var(--hard)}
+  .dcard h4{font-family:"Fraunces",serif;font-size:1.06rem;color:var(--ink);margin-bottom:3px}
+  .dcard p{font-size:.94rem;color:var(--muted)}
+
+  .btable{border:1.5px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--hard2);background:#fff}
+  .brow{display:flex;justify-content:space-between;gap:12px;padding:13px 16px;border-bottom:1px solid var(--line)}
+  .brow:last-child{border-bottom:0}
+  .brow .l{color:var(--ink);font-weight:700}
+  .brow .l small{display:block;color:var(--muted);font-size:.82rem;font-weight:500}
+  .brow .r{font-family:"Fraunces",serif;font-weight:700;color:var(--sea);white-space:nowrap}
+  .total{background:linear-gradient(135deg,var(--coral),var(--pink));color:#fff;border-radius:22px;padding:18px 20px;margin-top:18px;text-align:center;box-shadow:var(--hard2)}
+  .total .big{font-family:"Fraunces",serif;font-size:2.1rem;font-weight:700}
+  .total .pp{color:#FFEBC9;font-family:"Caveat";font-size:1.45rem}
+  .savings{margin-top:16px;font-size:.96rem;color:var(--muted)}
+  .savings b{color:var(--coral)}
+
+  .cm-card{background:linear-gradient(120deg,#FFF0F3,#FFF6EC);border:1.5px solid var(--pink);border-radius:22px;padding:22px 24px;box-shadow:var(--hard2)}
+  .cm-card .hand{color:var(--coral);font-size:1.7rem;display:inline-block;transform:rotate(-3deg)}
+  .cm-card h3{font-family:"Fraunces",serif;font-size:1.35rem;color:var(--sea);margin:2px 0 4px}
+  .cm-card p{color:var(--muted)}
+
+  .end{background:linear-gradient(180deg,#F47CA0,#C15B86 55%,#8E3A5D);color:#fff;text-align:center}
+  .end h2{font-size:clamp(2.2rem,8vw,4rem);font-weight:700;margin-bottom:.3em;color:#fff}
+  .end h2 em{font-style:normal;color:#FFEAC9}
+  .end p{max-width:36ch;margin:0 auto 10px;color:#FFF0F2;font-size:1.15rem;font-weight:600}
+  .end .sig{font-family:"Caveat",cursive;font-size:2.4rem;color:#FFEAC9;margin-top:18px;transform:rotate(-3deg);display:inline-block}
+  .end .route2{margin-top:22px;color:#FCD8E4;font-size:.9rem;letter-spacing:1px}
+  .secret{margin:22px 0 2px}
+  .secretBtn{background:rgba(255,255,255,.16);border:2px dashed #FFEAC9;color:#FFEAC9;border-radius:24px;padding:9px 20px;font-family:"Quicksand",sans-serif;font-size:.95rem;font-weight:700;cursor:pointer;transition:.2s}
+  .secretBtn:hover{background:rgba(255,255,255,.26)}
+  .secretMsg{max-width:42ch;margin:14px auto 0;color:#FFF3F5;font-family:"Caveat",cursive;font-size:1.65rem;line-height:1.4}
+
+  footer{background:#8E3A5D;color:#F3C9D9;text-align:center;padding:22px 22px 84px;font-size:.82rem}
+
+  .fotos-intro{color:var(--muted);font-weight:600;max-width:48ch;margin-bottom:18px}
+  .uploader{background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:18px;box-shadow:var(--hard2);margin-bottom:26px}
+  .up-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .up-drop{display:flex;align-items:center;gap:10px;border:2px dashed var(--pink);border-radius:16px;padding:12px 18px;cursor:pointer;font-weight:700;color:var(--sea);background:#FFF3F6;transition:.15s}
+  .up-drop:hover{background:#FFE9EF}
+  .up-ic{font-size:1.3rem}
+  .up-preview{width:64px;height:64px;object-fit:cover;border-radius:12px;border:2px solid var(--line)}
+  .up-cap{display:block;width:100%;margin-top:12px;border:1.5px solid var(--line);border-radius:14px;padding:10px 14px;font-family:inherit;font-size:1rem;font-weight:600;color:var(--ink);background:#fff}
+  .up-cap:focus{outline:none;border-color:var(--pink)}
+  .up-row2{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px;flex-wrap:wrap}
+  .who{display:inline-flex;border:1.5px solid var(--line);border-radius:22px;overflow:hidden}
+  .who button{border:0;background:#fff;padding:7px 16px;font-family:inherit;font-weight:700;color:var(--muted);cursor:pointer}
+  .who button.on{background:var(--pink);color:#fff}
+  .postBtn{border:0;background:linear-gradient(120deg,var(--coral),var(--pink));color:#fff;font-family:inherit;font-weight:700;font-size:1rem;padding:10px 24px;border-radius:24px;cursor:pointer;box-shadow:var(--hard);transition:.15s}
+  .postBtn:hover{transform:translateY(-2px);box-shadow:0 16px 26px -14px rgba(196,75,120,.5)}
+  .postBtn:active{transform:translateY(0)}
+  .postBtn:disabled{opacity:.6;cursor:default}
+  .up-msg{margin-top:10px;font-weight:700;font-size:.9rem;color:var(--sea);min-height:1.1em}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:18px}
+  @media(min-width:560px){.gallery{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}}
+  .polar{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 10px 0;box-shadow:var(--hard);transform:rotate(-1.5deg);transition:transform .18s}
+  .polar:nth-child(2n){transform:rotate(1.5deg)}
+  .polar:nth-child(3n){transform:rotate(-.6deg)}
+  .polar:hover{transform:rotate(0) scale(1.04);position:relative;z-index:2}
+  .polar img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:6px;display:block;background:#FBEAEE}
+  .polar figcaption{font-family:"Caveat",cursive;font-size:1.35rem;color:var(--ink);padding:8px 4px 12px;line-height:1.15}
+  .polar .meta{display:block;font-family:"Quicksand",sans-serif;font-size:.72rem;font-weight:700;color:var(--muted);letter-spacing:.5px;margin-top:2px}
+  .gal-empty{grid-column:1/-1;text-align:center;color:var(--muted);font-weight:600;padding:30px;border:2px dashed var(--line);border-radius:18px}
+  .fotos-setup{grid-column:1/-1;background:linear-gradient(120deg,#FFF0F3,#FFF6EC);border:1.5px solid var(--pink);border-radius:16px;padding:16px 18px;color:var(--deep);font-weight:600}
+
+  .marquee{background:linear-gradient(90deg,var(--coral),var(--pink),var(--coral));color:#fff;overflow:hidden;padding:14px 0;white-space:nowrap;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+  .marquee .track{display:inline-block;animation:marq 26s linear infinite;font-family:"Fraunces",serif;font-weight:700;font-size:clamp(1.1rem,3.5vw,1.6rem);letter-spacing:1px}
+  .marquee .track span{margin:0 12px;color:#FFEAC9}
+  .marquee:hover .track{animation-play-state:paused}
+  @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){.marquee .track{animation:none}}
+
+  .reveal{opacity:0;transform:translateY(34px) scale(.93);transition:opacity .8s cubic-bezier(.16,.7,.2,1),transform .8s cubic-bezier(.16,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1 !important;transform:none !important;transition:none}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+
+<nav><div class="wrap">
+  <div class="me">voor Rihab ♥</div>
+  <div class="links">
+    <a href="#route">route</a><a href="#stops">stops</a><a href="#fotos">foto's</a><a href="#eten">eten</a>
+    <a href="#net">vooraf</a><a href="#letop">let op</a><a href="#budget">budget</a>
+  </div>
+</div></nav>
+
+<header class="hero">
+  <div class="sun"></div><div class="seaband"></div>
+  <div class="wrap">
+    <span class="kick">roadtrip langs de Adriatische kust</span>
+    <h1>Van Kroatië<br>naar de <em>Riviera</em></h1>
+    <p class="sub">5 stops, 3 weken. De strandjes, het eten en de verborgen plekjes op een rijtje.</p>
+  </div>
+  <div class="scroll">scroll<span>↓</span></div>
+</header>
+
+<section class="intro">
+  <div class="wrap reveal">
+    <span class="eyebrow">de vibe</span>
+    <h2 class="big">5 stops, 3 weken, één zalige kust</h2>
+    <p class="lead">Van de Kroatische kust waar de bergen zo de zee inrollen, tot turquoise strandjes in Albanië die bijna niemand kent. Onderweg de oude brug van Mostar, de baai van Kotor, en een rivier die zo blauw is dat ze 't 'Albanese Thailand' noemen.</p>
+    <p style="color:var(--muted);margin-top:14px;max-width:44ch">Hieronder per stop de mooiste plekken, waar je moet eten en wat je zeker moet doen. Tik op de linkjes voor de kaart, foto's of om te boeken.</p>
+    <div class="chips"><span>5 stops</span><span>3 weken</span><span>verstopte strandjes</span><span>waar je moet eten</span><span>halal-vriendelijk</span></div>
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<section class="count">
+  <div class="wrap reveal">
+    <span class="eyebrow">nog even...</span>
+    <h2 class="big">Aftellen tot jij vertrekt</h2>
+    <div id="cd" class="cd">
+      <div class="u"><span class="v" data-d>00</span><span class="k">dagen</span></div>
+      <div class="u"><span class="v" data-h>00</span><span class="k">uur</span></div>
+      <div class="u"><span class="v" data-m>00</span><span class="k">min</span></div>
+      <div class="u"><span class="v" data-s>00</span><span class="k">sec</span></div>
+    </div>
+    <p id="cdnote" class="cdnote">7 augustus, rond de middag. En dan begint 't. 🌊</p>
+  </div>
+</section>
+
+<section id="net" class="net">
+  <div class="wrap reveal">
+    <span class="eyebrow">regel dit vóór je vertrekt</span>
+    <h2 class="big">Even dit eerst regelen</h2>
+    <div class="alert"><b>Let op, dit is belangrijk.</b> In Kroatië werkt je gsm gewoon zoals thuis (dat is nog EU). Maar Bosnië, Montenegro en Albanië liggen buiten de EU, en daar wordt roamen mega duur. Eén keer Google Maps openen kan je zomaar 50 euro kosten, geen grap.</div>
+    <div class="grid two">
+      <div class="icard"><h4>📶 Koop een Balkan-eSIM</h4><p>Voor je vertrekt: eentje die alle landen dekt (Kroatië, Bosnië, Montenegro, Albanië). Zo'n 12 à 15 euro voor 10 GB. Kijk bij Airalo, Holafly, Nomad of Saily.</p></div>
+      <div class="icard"><h4>📱 Zo zet je 'm aan</h4><p>Scan de QR-code uit de mail, zet je data op de eSIM, en laat je gewone simkaart gewoon in je toestel voor bellen en WhatsApp (data daarvan uitzetten).</p></div>
+      <div class="icard"><h4>🌍 Check de landen</h4><p>'Europe' betekent soms enkel EU, en dan werkt 't dus niet in Albanië, Montenegro of Bosnië. Controleer voor je koopt of alle 4 de landen er echt in zitten.</p></div>
+      <div class="icard"><h4>🎫 Vignetten &amp; tol</h4><p>Voor Oostenrijk én Slovenië heb je een vignet nodig — koop dat vóór vertrek online (digitaal). In Kroatië betaal je tol per snelweg, en de Karawankentunnel is aparte tol (±€8). Reken samen op zo'n €120–160.</p></div>
+      <div class="icard"><h4>💶 Geld wisselen</h4><p>Euro werkt in Kroatië én Montenegro. Albanië = lek (1 € ≈ 100 lek), Bosnië = mark (euro pakken ze daar vaak ook). Pin ter plekke aan een automaat (betere koers dan een wisselkantoor) en neem altijd wat cash mee — kleine zaakjes pakken geen kaart.</p></div>
+      <div class="icard"><h4>⛰️ Offline in de bergen</h4><p>Op 't Koman-meer en in de Albanese bergen valt 't signaal soms weg. Download je route en kaart op voorhand offline (Google Maps of maps.me).</p></div>
+    </div>
+    <p class="small">Extra tip: een lokale Albanese simkaart (~22 euro voor 40 GB) werkt gratis mee in Montenegro en Bosnië. Alleen niet in Kroatië, maar daar heb je je eigen abo.</p>
+  </div>
+</section>
+
+<!-- FOTOMUUR -->
+<section id="fotos" class="fotos">
+  <div class="wrap reveal">
+    <span class="eyebrow">hou me op de hoogte</span>
+    <h2 class="big">Jouw reis in foto's</h2>
+    <p class="fotos-intro">Post hier je foto's terwijl je met je vriendin onderweg bent, dan kijk ik gewoon mee vanaf hier. 📸</p>
+
+    <div class="uploader">
+      <div class="up-row">
+        <label class="up-drop" for="fileIn"><span class="up-ic">📷</span><span class="up-txt" id="upTxt">Kies een foto</span></label>
+        <input type="file" id="fileIn" accept="image/*" style="display:none">
+        <img id="upPreview" class="up-preview" alt="" hidden>
+      </div>
+      <input type="text" id="capIn" class="up-cap" placeholder="Zeg er iets bij... (optioneel)" maxlength="140">
+      <div class="up-row2">
+        <span style="color:var(--muted);font-weight:600;font-size:.9rem">Klaar? Post 'm hier 💕</span>
+        <button type="button" id="postBtn" class="postBtn">Plaatsen</button>
+      </div>
+      <p id="upMsg" class="up-msg"></p>
+    </div>
+
+    <div id="gallery" class="gallery"></div>
+  </div>
+</section>
+
+<section class="route" id="route">
+  <div class="wrap reveal">
+    <span class="eyebrow">de route</span>
+    <h2 class="big">3 weken, langs de kust naar beneden</h2>
+    <div class="tl">
+      <div class="stopli"><div class="dot">🚗</div><h4>Heenrit · Aartselaar → Baška Voda</h4><span class="when">±1.650 km · 15 à 16 uur</span><p>Via Duitsland, Oostenrijk en Slovenië. Doe 't gerust in 2 dagen, dan is 't chill.</p></div>
+      <div class="stopli"><div class="dot">🏖️</div><h4>Baška Voda · Kroatië</h4><span class="when">8–11 · 3 nachten</span><p>Makarska Riviera. Stranden onder de bergen.</p></div>
+      <div class="stopli"><div class="dot">🌉</div><h4>Mostar · Bosnië</h4><span class="when">11–12 · 1 nacht</span><p>Tussenstop. De oude brug en de watervallen onderweg.</p></div>
+      <div class="stopli"><div class="dot">⛰️</div><h4>Budva · Montenegro</h4><span class="when">12–15 · 3 nachten</span><p>De baai van Kotor en de stranden van Budva.</p></div>
+      <div class="stopli"><div class="dot">🚤</div><h4>Shkodër · Albanië</h4><span class="when">15–16 · 1 nacht</span><p>Poort naar het Koman-meer en de Shala-rivier.</p></div>
+      <div class="stopli"><div class="dot">🌅</div><h4>Himarë · Albanië</h4><span class="when">16–27 · 11 nachten</span><p>Jouw strandbasis op de Albanese Riviera.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="stops" style="padding-top:20px">
+  <div class="wrap">
+    <div class="tickhint reveal">👆 <b>Tik een plek aan als je 'm gedaan hebt</b> — dan streept ie zichzelf door. De linkjes openen Maps of een tour.</div>
+
+    <div class="stop reveal">
+      <div class="scene t-hr">
+        <svg viewBox="0 0 400 190" preserveAspectRatio="xMidYMax slice">
+          <circle cx="330" cy="46" r="24" fill="#ffe6a8" opacity=".9"/>
+          <path d="M0 120 Q100 80 200 108 T400 100 V190 H0Z" fill="#fff" opacity=".14"/>
+          <path d="M0 140 Q120 108 240 132 T400 126 V190 H0Z" fill="#fff" opacity=".12"/>
+          <path d="M0 158 Q60 150 120 158 T240 158 T360 158 T480 158 V190 H0Z" fill="#fff" opacity=".18"/>
+        </svg>
+        <div class="cap"><div class="place"><div class="country">Kroatië · 8–11</div><h3>Baška Voda</h3></div><div class="badge">3 nachten</div></div>
+      </div>
+      <div class="body">
+        <div class="sleep"><span class="ic">📍</span><div><b>De basis:</b> Baška Voda ligt op de Makarska Riviera, bergen pal achter je en de zee voor je deur. Ideaal om de omgeving vanuit te doen.</div></div>
+        <div class="spots">
+          <div class="spot"><h5>🏖️ Nikolina Beach</h5><p>Het hoofdstrand. Wit kiezel, superhelder water, pijnbomen voor de schaduw. Hier chill je gewoon een dag. <span class="pic">📸 stuur me hier zeker een foto</span></p></div>
+          <div class="spot gem"><h5>Brela (Punta Rata)</h5><p>10 minuutjes rijden. Een van de mooiste stranden van heel Kroatië, met dat bekende rotsje in 't water.</p></div>
+          <div class="spot"><h5>🪂 Biokovo Skywalk</h5><p>Glazen platform hoog in de bergen. Je kijkt zo naar beneden op de zee en de eilanden. Beetje eng, maar mega. <a class="go" href="https://www.google.com/maps/search/?api=1&query=Biokovo+Skywalk" target="_blank" rel="noopener">→ open in Maps</a></p></div>
+          <div class="spot"><h5>⛵ Dagtripje</h5><p>Met de boot naar Brač (dat gouden puntje, Zlatni Rat) of naar Hvar. De Krka-watervallen kan je van hier ook doen.</p></div>
+        </div>
+        <div class="halaltag">🍽️ Verse vis in de konoba's langs de kade is altijd safe. In Makarska (10 min) is er een vismarkt als je zelf kookt.</div>
+      </div>
+    </div>
+
+    <div class="stop reveal">
+      <div class="scene t-ba">
+        <svg viewBox="0 0 400 190" preserveAspectRatio="xMidYMax slice">
+          <circle cx="60" cy="48" r="20" fill="#ffe6a8" opacity=".8"/>
+          <path d="M120 150 Q200 60 280 150" fill="none" stroke="#fff" stroke-width="10" opacity=".5"/>
+          <rect x="112" y="146" width="10" height="34" fill="#fff" opacity=".45"/>
+          <rect x="278" y="146" width="10" height="34" fill="#fff" opacity=".45"/>
+          <path d="M0 165 Q100 156 200 165 T400 165 V190 H0Z" fill="#fff" opacity=".16"/>
+        </svg>
+        <div class="cap"><div class="place"><div class="country">Bosnië · 11–12</div><h3>Mostar</h3></div><div class="badge">1 nacht</div></div>
+      </div>
+      <div class="body">
+        <div class="sleep"><span class="ic">📍</span><div><b>Tussenstop:</b> de oude stad is de perfecte plek om even te stoppen op weg naar Montenegro.</div></div>
+        <div class="spots">
+          <div class="spot"><h5>🌉 Stari Most</h5><p>De beroemde oude brug over de rivier. 's Avonds is 't verlicht, echt sfeer. Rond de brug ligt een oude bazaar.</p></div>
+          <div class="spot gem"><h5>Blagaj</h5><p>Net buiten de stad. Een oud huisje tegen een rotswand, aan een turquoise bron. Zo'n plek waar je even stil van wordt.</p></div>
+          <div class="spot"><h5>💦 Kravice-watervallen</h5><p>Ligt onderweg. Soort mini-Niagara waar je in de zomer gewoon in kan zwemmen. <a class="go" href="https://www.google.com/maps/search/?api=1&query=Kravice+Waterfalls" target="_blank" rel="noopener">→ open in Maps</a></p></div>
+          <div class="spot"><h5>🕌 Počitelj</h5><p>Stenen vestingdorpje, klim naar boven voor 't uitzicht. Leuke stop als je nog tijd hebt.</p></div>
+        </div>
+        <div class="halaltag">🍽️ Hier is alles halal (moslimland). Ćevapi moet je echt proberen. Neem cash mee, ze betalen in mark (euro pakken ze meestal ook).</div>
+      </div>
+    </div>
+
+    <div class="stop reveal">
+      <div class="scene t-me">
+        <svg viewBox="0 0 400 190" preserveAspectRatio="xMidYMax slice">
+          <circle cx="320" cy="44" r="22" fill="#ffe6a8" opacity=".85"/>
+          <path d="M0 120 L70 70 L140 120Z" fill="#fff" opacity=".16"/>
+          <path d="M100 128 L180 64 L260 128Z" fill="#fff" opacity=".2"/>
+          <path d="M0 150 Q120 118 240 142 T400 138 V190 H0Z" fill="#fff" opacity=".14"/>
+          <path d="M0 166 Q80 158 160 166 T320 166 T480 166 V190 H0Z" fill="#fff" opacity=".2"/>
+        </svg>
+        <div class="cap"><div class="place"><div class="country">Montenegro · 12–15</div><h3>Budva</h3></div><div class="badge">3 nachten</div></div>
+      </div>
+      <div class="body">
+        <div class="sleep"><span class="ic">📍</span><div><b>De basis:</b> Budva is een badstad met een eigen oud centrum, perfect om de baai van Kotor vanuit te doen.</div></div>
+        <div class="spots">
+          <div class="spot"><h5>🏰 Kotor & Perast</h5><p>Half uurtje rijden. Kotor is middeleeuws, je kan de muren op voor een zot uitzicht. In Perast pak je een bootje naar 't kerkje op 't eilandje. <a class="go" href="https://www.getyourguide.com/s/?q=Kotor+boat+tour" target="_blank" rel="noopener">→ boottochten in de baai</a></p></div>
+          <div class="spot"><h5>🏖️ De stranden</h5><p>Mogren, Jaz, Bečići. En Sveti Stefan, dat ommuurde eilandje, moet je gezien hebben (al is 't privé, gewoon voor de foto).</p></div>
+          <div class="spot gem"><h5>Ulcinj</h5><p>Iets zuidelijker. Meest halal-vriendelijke plek hier, en een strand van 12 kilometer lang.</p></div>
+          <div class="spot"><h5>📸 Vista Vidikovac</h5><p>Uitzichtpunt boven Budva. Ga bij zonsondergang, dan is 't 't mooist. <span class="pic">📸 deze zonsondergang wil ik zien</span></p></div>
+        </div>
+        <div class="halaltag">🍽️ Budva heeft een paar Turkse/Bosnische grills, anders gewoon verse vis. Voor volledig halal is Ulcinj de plek.</div>
+      </div>
+    </div>
+
+    <div class="stop reveal">
+      <div class="scene t-al1">
+        <svg viewBox="0 0 400 190" preserveAspectRatio="xMidYMax slice">
+          <path d="M0 110 L80 50 L160 110Z" fill="#fff" opacity=".18"/>
+          <path d="M110 120 L200 46 L290 120Z" fill="#fff" opacity=".22"/>
+          <path d="M240 118 L320 60 L400 118Z" fill="#fff" opacity=".16"/>
+          <path d="M0 138 Q120 116 240 134 T400 130 V190 H0Z" fill="#fff" opacity=".16"/>
+          <path d="M0 160 Q90 152 180 160 T360 160 T540 160 V190 H0Z" fill="#fff" opacity=".2"/>
+        </svg>
+        <div class="cap"><div class="place"><div class="country">Albanië · 15–16</div><h3>Shkodër</h3></div><div class="badge">1 nacht</div></div>
+      </div>
+      <div class="body">
+        <div class="sleep"><span class="ic">📍</span><div><b>Onderweg:</b> Shkodër is de poort naar het Koman-meer en de Shala-rivier.</div></div>
+        <div class="spots">
+          <div class="spot gem"><h5>Koman-meer & Shala</h5><p>Dit moet je echt doen. Bootrit door een soort fjord, en de Shala heeft van dat turquoise water (ze noemen 't 'Albanese Thailand'). Zwemmen, kajakken, zipline. Dagtripje van 20 à 50 euro. <a class="go" href="https://www.getyourguide.com/s/?q=Komani+Lake+Shala" target="_blank" rel="noopener">→ boek een dagtrip</a></p></div>
+          <div class="spot"><h5>🏰 Rozafa-kasteel</h5><p>Oude burcht op een heuvel waar twee rivieren samenkomen. Mooi uitzicht over de stad en 't meer.</p></div>
+          <div class="spot"><h5>🌊 Meer van Shkodra</h5><p>Grootste meer van de Balkan. Chill voor de zonsondergang aan 't water.</p></div>
+          <div class="spot"><h5>🚶 De wandelstraat</h5><p>Rruga Kolë Idromeno, gezellige voetgangersstraat vol terrasjes. Even koffie pakken voor je verder rijdt.</p></div>
+        </div>
+        <div class="halaltag">🍽️ Albanië is moslimland, dus halal vind je overal. Makkelijk.</div>
+      </div>
+    </div>
+
+    <div class="stop reveal">
+      <div class="scene t-al2">
+        <svg viewBox="0 0 400 190" preserveAspectRatio="xMidYMax slice">
+          <circle cx="320" cy="52" r="30" fill="#ffe6a8" opacity=".9"/>
+          <circle cx="320" cy="52" r="52" fill="#ffe6a8" opacity=".2"/>
+          <path d="M0 128 Q100 92 200 116 T400 108 V190 H0Z" fill="#fff" opacity=".14"/>
+          <path d="M0 148 Q120 118 240 140 T400 134 V190 H0Z" fill="#fff" opacity=".16"/>
+          <path d="M0 166 Q70 158 140 166 T280 166 T420 166 V190 H0Z" fill="#fff" opacity=".22"/>
+        </svg>
+        <div class="cap"><div class="place"><div class="country">Albanië · 16–27</div><h3>Himarë</h3></div><div class="badge">11 nachten</div></div>
+      </div>
+      <div class="body">
+        <div class="sleep"><span class="ic">📍</span><div><b>Thuisbasis:</b> Himarë is de fijnste plek om je op de Albanese Riviera te settelen. Van hier doe je alle strandjes.</div></div>
+        <div class="spots">
+          <div class="spot"><h5>🏖️ Livadhi Beach</h5><p>Je go-to strand. 1,5 km lang, ondiep helder water, restaurantjes op 't zand. 10 min naar 't noorden. <span class="pic">📸 stuur me hier zeker een foto</span></p></div>
+          <div class="spot gem"><h5>Gjipe Beach</h5><p>Verstopt strand in een canyon. Enkel via een wandeling van een halfuur of met de boot. Turquoise, top om te snorkelen. <a class="go" href="https://www.google.com/maps/search/?api=1&query=Gjipe+Beach+Albania" target="_blank" rel="noopener">→ open in Maps</a></p></div>
+          <div class="spot gem"><h5>Filikuri & Porto Palermo</h5><p>Filikuri is een verstopt snorkelbaaitje (boot of kajak). Porto Palermo is een kasteel op een schiereiland met rustige baaien. <a class="go" href="https://www.google.com/maps/search/?api=1&query=Porto+Palermo+Castle+Albania" target="_blank" rel="noopener">→ Porto Palermo op de kaart</a></p></div>
+          <div class="spot"><h5>🧭 Verder de Riviera op</h5><p>Dhërmi, Jale, Borsh, de Llogara-pas. En naar 't zuiden: de Blue Eye, Ksamil en de ruïnes van Butrint. <a class="go" href="https://www.google.com/maps/search/?api=1&query=Blue+Eye+Saranda+Albania" target="_blank" rel="noopener">→ Blue Eye op de kaart</a></p></div>
+        </div>
+        <div class="halaltag">🍽️ Moslimland en overal verse vis. Ga naar Taverna Lefteri voor gegrilde octopus aan 't water. Met je appartement kook je makkelijk zelf, scheelt flink over 11 dagen.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="track">STRANDEN <span>♥</span> VERBORGEN PLEKJES <span>♥</span> ZONSONDERGANGEN <span>♥</span> TURQUOISE WATER <span>♥</span> HALAL FOOD <span>♥</span> ROADTRIP <span>♥</span> STRANDEN <span>♥</span> VERBORGEN PLEKJES <span>♥</span> ZONSONDERGANGEN <span>♥</span> TURQUOISE WATER <span>♥</span> HALAL FOOD <span>♥</span> ROADTRIP <span>♥</span> </div></div>
+
+<!-- ONE THING -->
+<section class="onething">
+  <div class="wrap reveal">
+    <div class="ot-card">
+      <span class="eyebrow" style="color:var(--gold)">als je maar één ding doet</span>
+      <h2 class="big" style="color:#fff">Ga naar Gjipe</h2>
+      <p>Dat verstopte strandje in de canyon tussen Himarë en Dhërmi. Je moet een halfuurtje afdalen (of je pakt de boot), maar dan sta je op zo'n plek waar je gewoon even stil van wordt. Turquoise water, bijna niemand, perfect om te snorkelen. Als je één plek onthoudt van heel deze lijst, is 't deze. Trust me. 😄</p>
+      <a class="go" style="color:var(--gold)" href="https://www.google.com/maps/search/?api=1&query=Gjipe+Beach+Albania" target="_blank" rel="noopener">→ Gjipe op de kaart</a>
+    </div>
+  </div>
+</section>
+
+<section id="eten" style="background:var(--sand2)">
+  <div class="wrap reveal">
+    <span class="eyebrow">honger?</span>
+    <h2 class="big">Waar je moet eten</h2>
+    <div class="grid two">
+      <div class="icard"><h4>🐟 Baška Voda / Makarska</h4><p><a class="ml" href="https://www.google.com/maps/search/?api=1&query=Konoba+Panorama+Baska+Voda" target="_blank" rel="noopener">Konoba Panorama</a> voor zeezicht bij zonsondergang, <a class="ml" href="https://www.google.com/maps/search/?api=1&query=Bistro+Karlo+Baska+Voda" target="_blank" rel="noopener">Bistro Karlo</a> voor lunch, en verse vis in de konoba's aan de kade.</p></div>
+      <div class="icard"><h4>🥙 Mostar</h4><p><a class="ml" href="https://www.google.com/maps/search/?api=1&query=Tima+Irma+Mostar" target="_blank" rel="noopener">Tima-Irma</a> voor de beste ćevapi (oude stad), <a class="ml" href="https://www.google.com/maps/search/?api=1&query=Sadrvan+restaurant+Mostar" target="_blank" rel="noopener">Šadrvan</a> voor Bosnische klassiekers, <a class="ml" href="https://www.google.com/maps/search/?api=1&query=Buregdzinica+Rodjeni+Mostar" target="_blank" rel="noopener">Rođeni</a> voor burek.</p></div>
+      <div class="icard"><h4>🐟 Budva</h4><p><a class="ml" href="https://www.google.com/maps/search/?api=1&query=Konoba+Bocun+Budva" target="_blank" rel="noopener">Konoba Bocun</a> (familiezaak, traditioneel), <a class="ml" href="https://www.google.com/maps/search/?api=1&query=Fish+Grill+Budva" target="_blank" rel="noopener">Fish Grill</a> (kies je eigen vis, cash) en <a class="ml" href="https://www.google.com/maps/search/?api=1&query=Konoba+Stari+Grad+Budva" target="_blank" rel="noopener">Konoba Stari Grad</a> in de oude stad.</p></div>
+      <div class="icard"><h4>🦑 Kotor (dagtrip)</h4><p><a class="ml" href="https://www.google.com/maps/search/?api=1&query=Konoba+Nautilus+Kotor" target="_blank" rel="noopener">Konoba Nautilus</a>, vers van de vismarkt, en <a class="ml" href="https://www.google.com/maps/search/?api=1&query=Portun+restaurant+Dobrota+Kotor" target="_blank" rel="noopener">Portun</a> aan 't water in Dobrota.</p></div>
+      <div class="icard"><h4>🐙 Himarë / Riviera</h4><p><a class="ml" href="https://www.google.com/maps/search/?api=1&query=Taverna+Lefteri+Himara" target="_blank" rel="noopener">Taverna Lefteri</a> voor gegrilde octopus aan 't water, <a class="ml" href="https://www.google.com/maps/search/?api=1&query=Merluc+Fish+Shop+Himara" target="_blank" rel="noopener">Merluc Fish Shop</a> (goedkoop, cash) en <a class="ml" href="https://www.google.com/maps/search/?api=1&query=Jesters+Taverna+Livadhi+Himara" target="_blank" rel="noopener">Jester's Taverna</a> op 't strand van Livadhi.</p></div>
+      <div class="icard" style="background:#eaf5ee;border-color:#bfe2c9"><h4 style="color:#1f6b3a">✅ Slim & halal eten</h4><p>In Bosnië en Albanië is alles halal. In Kroatië en Montenegro pak je gewoon verse vis, altijd goed. Eet in de dorpstaverna's, niet in de beach clubs (beter én goedkoper). En vraag altijd de prijs per kilo voor je vis bestelt.</p></div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="letop" class="dont">
+  <div class="wrap reveal">
+    <span class="eyebrow">even opletten</span>
+    <h2 class="big">Waar je moet oppassen</h2>
+    <div class="grid two">
+      <div class="dcard"><h4>🚕 Nep-taxi's</h4><p>Vooral aan luchthavens en havens vragen 'taxi's' 2 à 4 keer te veel. Gebruik Bolt of spreek de prijs af voor je instapt.</p></div>
+      <div class="dcard"><h4>🅿️ Nep-parking & 'villa'-scam</h4><p>Mannen met hesjes die je naar 'privé-parking' wijzen bij stranden. Negeren. En boek nooit een verblijf via overschrijving naar iemand privé.</p></div>
+      <div class="dcard"><h4>🔧 De monteur-truc (Albanië)</h4><p>Iemand 'ziet' plots een probleem aan je auto en een garage vlakbij rekent in euro's af. Gewoon doorrijden, laat 't enkel in een echte garage checken.</p></div>
+      <div class="dcard"><h4>🍽️ Toeristenval-resto's</h4><p>Niet eten pal op 't hoofdplein van Kotor of enkel in beach clubs. Een straatje verder of in 't dorp is 't beter en goedkoper.</p></div>
+      <div class="dcard"><h4>💸 Geld & pinnen</h4><p>1 euro is ongeveer 100 lek in Albanië. Biedt iemand 80, wandel weg. Neem cash mee, veel kleine zaakjes pakken geen kaart.</p></div>
+      <div class="dcard"><h4>⛰️ Bergwegen</h4><p>Bochtig, dus rij rustig, en 's nachts liever niet in 't noorden. Blijf op de gemarkeerde paden in afgelegen gebieden.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKING -->
+<section class="pack">
+  <div class="wrap reveal">
+    <span class="eyebrow">bijna vergeten</span>
+    <h2 class="big">Neem dit zeker mee</h2>
+    <ul class="packlist" id="packlist">
+      <li data-p="zon">Zonnecrème (de zon daar meent 't echt)</li>
+      <li data-p="schoenen">Goeie stapschoenen — voor de afdaling naar Gjipe</li>
+      <li data-p="snorkel">Een snorkelbril, het water is zo helder</li>
+      <li data-p="powerbank">Powerbank (voor al die foto's)</li>
+      <li data-p="cash">Cash: euro's én wat lek voor Albanië</li>
+      <li data-p="jasje">Een luchtig jasje voor 's avonds en de bergen</li>
+      <li data-p="zin">En goeie zin ✨</li>
+    </ul>
+  </div>
+</section>
+
+<section id="budget" class="budget">
+  <div class="wrap reveal">
+    <span class="eyebrow">wat kost het</span>
+    <h2 class="big">Even snel het budget</h2>
+    <p style="color:var(--muted);margin-bottom:16px">Voor 2 personen, met de auto, ongeveer 3 weken. Verblijf zit er niet bij — dat regelen jullie zelf. Richtprijs, geen exacte cijfers.</p>
+    <div class="btable">
+      <div class="brow"><div class="l">Brandstof<small>±4.900 km heen en terug</small></div><div class="r">€ 600 – 700</div></div>
+      <div class="brow"><div class="l">Eten & drinken<small>mix van zelf koken en uit eten</small></div><div class="r">€ 800 – 1.100</div></div>
+      <div class="brow"><div class="l">Activiteiten & boten<small>Koman-meer, boottripjes, entrees</small></div><div class="r">€ 250 – 400</div></div>
+      <div class="brow"><div class="l">Buffer<small>voor de zekerheid</small></div><div class="r">€ 250</div></div>
+    </div>
+    <div class="total"><div class="big">€ 1.900 – 2.450</div><div class="pp">± € 950 – 1.200 per persoon</div></div>
+    <p class="savings"><b>Goedkoper?</b> Albanië en Montenegro zijn een pak goedkoper dan Kroatië, en in juni of september is alles nog eens 30 à 40% minder. Verblijf zit hier niet bij — dat regelen jullie zelf.</p>
+  </div>
+</section>
+
+<!-- CALL ME -->
+<section class="callme">
+  <div class="wrap reveal">
+    <div class="cm-card">
+      <span class="hand">psst</span>
+      <h3>Verdwaald? Honger? Zin in een babbel?</h3>
+      <p>Je weet me te vinden. Ik zit hier gewoon te wachten op je foto's. 😄</p>
+    </div>
+  </div>
+</section>
+
+<section class="end">
+  <div class="wrap reveal">
+    <h2>En dan... gewoon <em>gaan</em> 🌊</h2>
+    <p>Stuur me zeker een foto van dat blauwe water in Himarë. Je gaat 't fantastisch vinden.</p>
+    <div class="secret">
+      <button id="secretBtn" class="secretBtn" type="button">niet klikken 😏</button>
+      <p id="secretMsg" class="secretMsg" hidden>Oké, je klikte toch. 😄 Ik hoop echt dat je 't daar geweldig gaat vinden. En als je terug bent, ben ik wel benieuwd naar àl je verhalen. Veilige reis, en tot snel. — x</p>
+    </div>
+    <div class="sig">x Yassin</div>
+    <div class="route2">Baška Voda · Mostar · Budva · Shkodër · Himarë</div>
+  </div>
+</section>
+
+<footer>Gemaakt voor Rihab · een roadtrip langs de Adriatische kust</footer>
+<div id="prog"><span class="lbl">afgevinkt</span><span class="track"><span class="fill"></span></span><span class="n">0/0</span></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  // ---- fotomuur (Supabase) ----
+  (function(){
+    // >>> VUL DIT IN met je eigen Supabase-project <<<
+    const SUPA_URL='https://fucmukhnxfwggdkixnbw.supabase.co';        // bv. https://xxxx.supabase.co
+    const SUPA_KEY='JeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ1Y211a2hueGZ3Z2dka2l4bmJ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU5Njg3NDEsImV4cCI6MjEwMTU0NDc0MX0.RENFFQ9tiYDSw6FmlVrVwV-deDUz4okbN1_7TvufBTU';   // de anon / public key
+    const BUCKET='trip-photos', TABLE='photos';
+
+    const gallery=document.getElementById('gallery');
+    if(!gallery)return;
+    const fileIn=document.getElementById('fileIn'),upTxt=document.getElementById('upTxt'),upPrev=document.getElementById('upPreview');
+    const capIn=document.getElementById('capIn'),postBtn=document.getElementById('postBtn'),upMsg=document.getElementById('upMsg');
+    const who='Rihab'; let file=null;
+    fileIn.addEventListener('change',()=>{file=fileIn.files[0]||null;if(file){upTxt.textContent=file.name.slice(0,22);upPrev.src=URL.createObjectURL(file);upPrev.hidden=false;}});
+
+    function esc(t){return (t||'').replace(/[<>&]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]));}
+    function when(ts){try{const d=new Date(ts);return d.toLocaleDateString('nl-BE',{day:'numeric',month:'short'})+' · '+d.toLocaleTimeString('nl-BE',{hour:'2-digit',minute:'2-digit'});}catch(e){return '';}}
+    function card(p){const f=document.createElement('figure');f.className='polar';f.innerHTML='<img loading="lazy" src="'+p.url+'" alt=""><figcaption>'+esc(p.caption)+'<span class="meta">'+esc(p.author||'')+' · '+when(p.created_at)+'</span></figcaption>';return f;}
+    function fill(html,cls){gallery.innerHTML='<div class="'+(cls||'gal-empty')+'">'+html+'</div>';}
+
+    const ready=/^https?:\/\//.test(SUPA_URL)&&SUPA_KEY.length>20&&window.supabase;
+    if(!ready){
+      fill('✨ Bijna klaar — de fotomuur gaat live zodra de online-opslag is ingesteld.','fotos-setup');
+      postBtn.addEventListener('click',()=>{upMsg.textContent='De fotomuur staat nog niet online.';});
+      return;
+    }
+    const sb=window.supabase.createClient(SUPA_URL,SUPA_KEY);
+    async function load(){
+      const {data,error}=await sb.from(TABLE).select('*').order('created_at',{ascending:false});
+      if(error){fill('Kon de foto\'s niet laden.');return;}
+      if(!data.length){fill('Nog geen foto\'s. Wees de eerste 📸');return;}
+      gallery.innerHTML='';data.forEach(p=>gallery.appendChild(card(p)));
+    }
+    async function post(){
+      if(!file){upMsg.textContent='Kies eerst een foto.';return;}
+      postBtn.disabled=true;upMsg.textContent='Bezig met uploaden...';
+      try{
+        const ext=(file.name.split('.').pop()||'jpg').toLowerCase();
+        const name=Date.now()+'-'+Math.random().toString(36).slice(2,8)+'.'+ext;
+        const up=await sb.storage.from(BUCKET).upload(name,file,{cacheControl:'3600'});
+        if(up.error)throw up.error;
+        const pub=sb.storage.from(BUCKET).getPublicUrl(name);
+        const url=pub.data.publicUrl;
+        const ins=await sb.from(TABLE).insert({url:url,caption:capIn.value.trim(),author:who});
+        if(ins.error)throw ins.error;
+        upMsg.textContent='Geplaatst! 🎉';
+        file=null;fileIn.value='';capIn.value='';upTxt.textContent='Kies een foto';upPrev.hidden=true;
+        load();setTimeout(()=>upMsg.textContent='',2500);
+      }catch(e){upMsg.textContent='Er ging iets mis: '+(e.message||e);}
+      postBtn.disabled=false;
+    }
+    postBtn.addEventListener('click',post);
+    load();
+    try{sb.channel('photos-feed').on('postgres_changes',{event:'INSERT',schema:'public',table:TABLE},()=>load()).subscribe();}catch(e){}
+    setInterval(load,20000);
+  })();
+</script>
+<script>
+  const bar=document.getElementById('bar');
+  addEventListener('scroll',()=>{const h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // ---- parallax & zoom op scroll ----
+  (function(){
+    if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+    const sun=document.querySelector('.hero .sun'), hw=document.querySelector('.hero .wrap');
+    const scenes=[...document.querySelectorAll('.scene svg')];
+    let ticking=false;
+    function upd(){
+      const y=window.scrollY||window.pageYOffset, vh=window.innerHeight;
+      if(sun) sun.style.transform='translateY('+(y*0.28).toFixed(1)+'px)';
+      if(hw){const p=Math.min(y/560,1);hw.style.transform='translateY('+(y*0.12).toFixed(1)+'px) scale('+(1-p*0.07).toFixed(3)+')';hw.style.opacity=(1-p*0.55).toFixed(2);}
+      for(const svg of scenes){
+        const r=svg.getBoundingClientRect();
+        if(r.bottom<0||r.top>vh) continue;
+        const off=((r.top+r.height/2)-vh/2)/vh;
+        svg.style.transform='translateY('+(off*26).toFixed(1)+'px) scale(1.14)';
+      }
+      ticking=false;
+    }
+    addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(upd);}},{passive:true});
+    addEventListener('resize',()=>{if(!ticking){ticking=true;requestAnimationFrame(upd);}},{passive:true});
+    upd();
+  })();
+
+  // ---- bucket list ----
+  const KEY='rihab_roadtrip_done_v1';
+  const store={get(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return {}}},set(o){try{localStorage.setItem(KEY,JSON.stringify(o))}catch(e){}}};
+  const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  let done=store.get();
+  const spots=[...document.querySelectorAll('.spot')];
+  const prog=document.getElementById('prog'),fill=prog.querySelector('.fill'),num=prog.querySelector('.n'),lbl=prog.querySelector('.lbl');
+  spots.forEach((sp,i)=>{
+    const t=(sp.querySelector('h5')?.textContent||'').trim().toLowerCase().replace(/[^a-z0-9]+/g,'-').slice(0,40)||('spot'+i);
+    sp.dataset.k=t;
+    const c=document.createElement('span');c.className='chk';c.textContent='♥';sp.appendChild(c);
+    if(done[t])sp.classList.add('done');
+    sp.addEventListener('click',(e)=>{
+      if(e.target.closest('a'))return;
+      const on=!sp.classList.contains('done');
+      sp.classList.toggle('done',on);
+      done=store.get();
+      if(on){done[sp.dataset.k]=1;burst(c);}else{delete done[sp.dataset.k];}
+      store.set(done);update();
+    });
+  });
+  function update(){
+    const total=spots.length,dn=spots.filter(s=>s.classList.contains('done')).length;
+    fill.style.width=(total?dn/total*100:0)+'%';num.textContent=dn+'/'+total;
+    lbl.textContent=(dn===total&&total)?'alles gedaan!':'afgevinkt';
+  }
+  update();
+  function burst(el){
+    if(reduce)return;
+    const r=el.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2,cols=['#17B6A7','#F5B841','#F2794B','#0d7a86'];
+    for(let i=0;i<14;i++){
+      const p=document.createElement('span');p.className='cf';
+      p.style.left=cx+'px';p.style.top=cy+'px';p.style.background=cols[i%cols.length];
+      const a=Math.random()*6.283,dist=28+Math.random()*46;
+      p.style.setProperty('--dx',Math.cos(a)*dist+'px');p.style.setProperty('--dy',(Math.sin(a)*dist-20)+'px');
+      document.body.appendChild(p);setTimeout(()=>p.remove(),780);
+    }
+  }
+
+  // ---- countdown ----
+  (function(){
+    const el=document.getElementById('cd'); if(!el)return;
+    const target=new Date(2026,7,7,12,0,0).getTime();
+    const dd=el.querySelector('[data-d]'),hh=el.querySelector('[data-h]'),mm=el.querySelector('[data-m]'),ss=el.querySelector('[data-s]');
+    const note=document.getElementById('cdnote');
+    const pad=n=>String(n).padStart(2,'0');
+    function tick(){
+      let diff=target-Date.now();
+      if(diff<=0){el.style.display='none';note.textContent="Het is zover \u2014 veilige reis! \uD83C\uDF0A";return;}
+      const d=Math.floor(diff/864e5);diff-=d*864e5;
+      const h=Math.floor(diff/36e5);diff-=h*36e5;
+      const m=Math.floor(diff/6e4);diff-=m*6e4;
+      const s=Math.floor(diff/1e3);
+      dd.textContent=pad(d);hh.textContent=pad(h);mm.textContent=pad(m);ss.textContent=pad(s);
+    }
+    tick();setInterval(tick,1000);
+  })();
+
+  // ---- packing list ----
+  (function(){
+    const PK='rihab_roadtrip_pack_v1';
+    const g=()=>{try{return JSON.parse(localStorage.getItem(PK))||{}}catch(e){return {}}};
+    const s2=o=>{try{localStorage.setItem(PK,JSON.stringify(o))}catch(e){}};
+    let p=g();
+    document.querySelectorAll('#packlist li').forEach(li=>{
+      if(p[li.dataset.p])li.classList.add('on');
+      li.addEventListener('click',()=>{
+        const on=!li.classList.contains('on');li.classList.toggle('on',on);
+        p=g();if(on)p[li.dataset.p]=1;else delete p[li.dataset.p];s2(p);
+      });
+    });
+  })();
+
+  // ---- secret message ----
+  (function(){
+    const b=document.getElementById('secretBtn'),m=document.getElementById('secretMsg');
+    if(!b)return;
+    b.addEventListener('click',()=>{m.hidden=false;b.textContent='(wist ik wel dat je zou klikken \uD83D\uDE04)';b.disabled=true;b.style.opacity=.6;b.style.cursor='default';});
+  })();
+</script>
+</body>
+</html>
